@@ -1,0 +1,403 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "OpenAPI definition",
+      "version": "v0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080",
+        "description": "Generated server url"
+      }
+    ],
+    "paths": {
+      "/api/personnes/{id}": {
+        "get": {
+          "tags": [
+            "personne-controller"
+          ],
+          "operationId": "getPersonne",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PersonneDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "personne-controller"
+          ],
+          "operationId": "updatePersonne",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonneDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PersonneDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "personne-controller"
+          ],
+          "operationId": "deletePersonne",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/emplois/{id}": {
+        "get": {
+          "tags": [
+            "emploi-controller"
+          ],
+          "operationId": "getEmploi",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/EmploiDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "emploi-controller"
+          ],
+          "operationId": "updateEmploi",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmploiDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/EmploiDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "emploi-controller"
+          ],
+          "operationId": "deleteEmploi",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      },
+      "/api/personnes": {
+        "post": {
+          "tags": [
+            "personne-controller"
+          ],
+          "operationId": "createPersonne",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonneDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PersonneDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/emplois": {
+        "post": {
+          "tags": [
+            "emploi-controller"
+          ],
+          "operationId": "createEmploi",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmploiDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/EmploiDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/personnes/all": {
+        "get": {
+          "tags": [
+            "personne-controller"
+          ],
+          "operationId": "getAllPersonnes",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PersonneDTO"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/emplois/all": {
+        "get": {
+          "tags": [
+            "emploi-controller"
+          ],
+          "operationId": "getAllEmplois",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/EmploiDTO"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Emploi": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nomEntreprise": {
+              "type": "string"
+            },
+            "posteOccupe": {
+              "type": "string"
+            },
+            "dateDeDebut": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "dateDeFin": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "personne": {
+              "$ref": "#/components/schemas/Personne"
+            }
+          }
+        },
+        "EmploiDTO": {
+          "type": "object",
+          "properties": {
+            "nomEntreprise": {
+              "type": "string"
+            },
+            "posteOccupe": {
+              "type": "string"
+            },
+            "dateDeDebut": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "dateDeFin": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "personne": {
+              "$ref": "#/components/schemas/Personne"
+            }
+          }
+        },
+        "Personne": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nom": {
+              "type": "string"
+            },
+            "prenom": {
+              "type": "string"
+            },
+            "dateDeNaissance": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "emploi": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Emploi"
+              }
+            }
+          }
+        },
+        "PersonneDTO": {
+          "type": "object",
+          "properties": {
+            "nom": {
+              "type": "string"
+            },
+            "prenom": {
+              "type": "string"
+            },
+            "dateDeNaissance": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "emploi": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/EmploiDTO"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
